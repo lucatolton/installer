@@ -711,7 +711,7 @@ firewall_firewalld() {
     firewall-cmd --reload -q                          # Enable firewall
 
     echo "[*] Firewall-cmd installed"
-    print_brake 70
+    print_break 70
 }
 
 letsencrypt() {
@@ -807,20 +807,20 @@ main() {
     # detect distro
     detect_distro
 
-    print_brake 70
+    print_break 70
     echo "[*] Jexactyl Installation Script"
     echo "[*]"
     echo "[*] This program is redistributed under the GNU General Public License."
     echo "[*] You can edit, copy or redistribute it under the terms of said license."
     echo "[*]"
     echo "[*] Latest panel release is $JEXACTYL_VERSION"
-    print_brake 70
+    print_break 70
 
     # checks if the system is compatible with this installation script
     check_os_comp
 
     # set database credentials
-    print_brake 72
+    print_break 72
     echo "[*] Database configuration."
     echo ""
     echo "[*] This will be the credentials used for communication between the MySQL"
@@ -867,7 +867,7 @@ main() {
     required_input user_lastname "Last name for the initial admin account: " "Name cannot be empty"
     password_input user_password "Password for the initial admin account: " "Password cannot be empty"
 
-    print_brake 72
+    print_break 72
 
     # set FQDN
     while [ -z "$FQDN" ]; do
@@ -904,7 +904,7 @@ main() {
 }
 
 summary() {
-    print_brake 62
+    print_break 62
     echo "[*] Pterodactyl panel $JEXACTYL_VERSION with nginx on $OS"
     echo "[*] Database name: $MYSQL_DB"
     echo "[*] Database user: $MYSQL_USER"
@@ -920,11 +920,11 @@ summary() {
     echo "[*] Configure Firewall? $CONFIGURE_FIREWALL"
     echo "[*] Configure Let's Encrypt? $CONFIGURE_LETSENCRYPT"
     echo "[*] Assume SSL? $ASSUME_SSL"
-    print_brake 62
+    print_break 62
 }
 
 goodbye() {
-    print_brake 62
+    print_break 62
     echo "[*] Panel installation completed"
     echo "[*]"
 
@@ -936,7 +936,7 @@ goodbye() {
     echo "[*] Installation is using nginx on $OS"
     echo "[*] Thank you for using this script."
     [ "$CONFIGURE_FIREWALL" == false ] && echo -e "* ${COLOR_RED}Note${COLOR_NC}: If you haven't configured the firewall: 80/443 (HTTP/HTTPS) is required to be open!"
-    print_brake 62
+    print_break 62
 }
 
 # run script
